@@ -1,0 +1,52 @@
+<header>
+  <div class="headline">
+    <div class="inner">
+      <h1>Welcome</h1>
+      <p>to the world of f1</p>
+    </div>
+  </div>
+</header>
+
+<section>
+  <h1 class="textCenter">More Infos</h1>
+
+  <div class="containerOfCards">
+    <div class="card">
+      <img src="../../../assets/img/capacete.svg" alt="capacete" />
+      <div class="containerCards">
+        <h4>
+          <a [routerLink]="['/drivers']"><b> Drivers </b></a>
+        </h4>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../../../assets/img/local.svg" alt="capacete" />
+      <div class="containerCards">
+        <h4>
+          <a [routerLink]="['/circuits']"><b> Circuits </b></a>
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="containerOfCards">
+    <div class="card">
+      <img src="../../../assets/img/bandeiras.svg" alt="capacete" />
+      <div class="containerCards">
+        <h4>
+          <a [routerLink]="['seasons']"> <b> Seasons </b></a>
+        </h4>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="../../../assets/img/f1_logo.svg" alt="capacete" />
+      <div class="containerCards">
+        <h4>
+          <a [routerLink]="['seasons']"><b>Current season </b></a>
+        </h4>
+      </div>
+    </div>
+  </div>
+</section>

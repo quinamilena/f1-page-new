@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+.containerOfCards {
+  align-content: center;
+  display: flex;
+  margin-bottom: 4%;
+}
+
+.card {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 46%;
+  display: flex;
+  padding: 2%;
+  margin: 0 2%;
+  border-radius: 8px;
+}
+
+.card:hover {
+  box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.containerCards {
+  margin: 0 2%;
+  width: 100%;
+  text-align: left;
+}
+
+.card img {
+  width: 20%;
+  padding: 0 2%;
+}

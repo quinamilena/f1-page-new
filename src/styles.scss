@@ -1,1 +1,178 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Audiowide", cursive !important;
+}
+
+a,
+p,
+span,
+select,
+text {
+  font-family: "Aldrich", sans-serif !important;
+}
+
+/* color 
+#F5F5F5   #00C853
+#EF5350   #FFFFFF
+#212121   #E0E0E0
+#FBE9E7   #616161
+#EF5350   #9E9E9E
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #212121;
+  background-color: #f2ecff;
+}
+
+header {
+  background: #f5f5f5;
+}
+
+.headline {
+  position: relative;
+  height: 500px;
+  color: #f5f5f5;
+  text-align: center;
+  background-image: url("./assets/img/flag_f1.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center center;
+  opacity: 1;
+}
+
+.headline:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(17, 17, 17, 0.5); */
+  background: rgba(17, 17, 17, 0.8);
+}
+
+.inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  z-index: 10;
+  transform: translateX(-50%) translateY(-50%);
+  animation: fade-in 0.75s 0.25s ease-in forwards;
+}
+
+.inner h1 {
+  margin: 0;
+  font-size: 5em;
+  line-height: 1.2em;
+}
+
+.inner p {
+  margin: 0;
+  font-size: 1.4em;
+  font-style: italic;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+nav.scrolled {
+  background: rgba(17, 17, 17, 0.9);
+}
+
+nav ul {
+  float: right;
+  list-style: none;
+  padding: 25px;
+  margin: 0;
+}
+
+nav li {
+  float: left;
+}
+
+nav a {
+  font-size: 18px;
+  color: #f5f5f5;
+  text-decoration: none;
+  margin-right: 20px;
+  display: block;
+}
+
+nav a:hover {
+  color: #fbe9e7;
+}
+
+.logo {
+  height: 75px;
+  float: left;
+  background-image: url("./assets/img/local.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+section {
+  background-color: #f5f5f5;
+  width: 100%;
+  margin: 0 auto 25px auto;
+  padding: 20px;
+  max-width: 65em;
+  font-size: 1.2em;
+  line-height: 1.6em;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.textCenter {
+  text-align: center;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.nav_list li {
+  padding: 15px 0;
+  text-transform: uppercase;
+  animation: 2s slideUp ease forwards 0.5s;
+  position: relative;
+}
+
+.nav_list li a {
+  transition: all 0.5s ease-in-out;
+}
+
+.nav_list li::before {
+  content: attr(data-item);
+  position: absolute;
+  height: 2px;
+  width: 0px;
+  left: 0;
+  bottom: 10px;
+  background: #ef5350;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  color: #8254ff !important;
+}
+
+.nav_list li:hover:before {
+  width: 80%;
+  transition: all 0.5s ease-in-out;
+}
