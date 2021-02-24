@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavScrollService } from '../../services/nav-scroll.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private NavScroll: NavScrollService) {}
 
-  ngOnInit(): void {
+  navScrollFunction():void {
+    return this.NavScroll.navScroll();
+  }
+
+  ngOnInit() {
+    this.navScrollFunction();
   }
 
 }

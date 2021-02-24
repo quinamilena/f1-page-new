@@ -17,7 +17,7 @@ text {
   font-family: "Aldrich", sans-serif !important;
 }
 
-/* color 
+/* color
 #F5F5F5   #00C853
 #EF5350   #FFFFFF
 #212121   #E0E0E0
@@ -149,7 +149,7 @@ section {
 }
 
 .nav_list li {
-  padding: 15px 0;
+  // padding: 15px 0;
   text-transform: uppercase;
   animation: 2s slideUp ease forwards 0.5s;
   position: relative;
@@ -165,7 +165,7 @@ section {
   height: 2px;
   width: 0px;
   left: 0;
-  bottom: 10px;
+  bottom: 0px;
   background: #ef5350;
   transition: all 0.5s ease;
   overflow: hidden;
