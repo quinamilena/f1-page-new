@@ -6,6 +6,7 @@
   align-content: center;
   display: flex;
   margin-bottom: 4%;
+  padding: 0 15%;
 }
 
 .card {
@@ -16,6 +17,47 @@
   padding: 2%;
   margin: 0 2%;
   border-radius: 8px;
+
+  h4 {
+    animation: 2s slideUp ease forwards 0.8s;
+    position: relative;
+  }
+
+  h4::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 0px;
+    left: 0;
+    bottom: 0px;
+    background: #212121;
+    transition: all 0.8s ease;
+    overflow: hidden;
+  }
+
+  h4.textLong:hover::before {
+    width: 54%;
+  }
+
+  h4.textSort:hover::before {
+    width: 25%;
+  }
+
+  h4:hover:before {
+    width: 29%;
+  }
+
+  a {
+    text-decoration: none;
+    color: #212121;
+    font-size: 18px;
+    display: block;
+    transition: all 0.8s ease-in-out;
+  }
+
+  a:hover {
+    color: #ef5350;
+  }
 }
 
 .card:hover {

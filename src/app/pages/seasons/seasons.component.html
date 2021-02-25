@@ -1,10 +1,18 @@
 <nav>
   <div class="logo"></div>
   <ul class="nav_list">
-    <li class="nav_list_item"><a [routerLink]="['/']">Home</a></li>
-    <li class="nav_list_item"><a [routerLink]="['/drivers']">Drivers</a></li>
-    <li class="nav_list_item"><a [routerLink]="['/circuits']">Circuits</a></li>
-    <li class="nav_list_item"><a [routerLink]="['/seasons']">Seasons</a></li>
+    <li class="nav_list_item textSort">
+      <a [routerLink]="['/']">Home</a>
+    </li>
+    <li class="nav_list_item">
+      <a [routerLink]="['/circuits']">Circuits</a>
+    </li>
+    <li class="nav_list_item">
+      <a [routerLink]="['/drivers']">Drivers</a>
+    </li>
+    <li class="nav_list_item li_active">
+      <a class="active" [routerLink]="['/seasons']">Seasons</a>
+    </li>
   </ul>
 </nav>
 

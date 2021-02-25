@@ -12,15 +12,6 @@
 
   <div class="containerOfCards">
     <div class="card">
-      <img src="../../../assets/img/capacete.svg" alt="capacete" />
-      <div class="containerCards">
-        <h4>
-          <a [routerLink]="['/drivers']"><b> Drivers </b></a>
-        </h4>
-      </div>
-    </div>
-
-    <div class="card">
       <img src="../../../assets/img/local.svg" alt="capacete" />
       <div class="containerCards">
         <h4>
@@ -28,23 +19,32 @@
         </h4>
       </div>
     </div>
+
+    <div class="card">
+      <img src="../../../assets/img/f1_logo.svg" alt="capacete" />
+      <div class="containerCards">
+        <h4 class="textLong">
+          <a [routerLink]="['seasons']"><b>Current season </b></a>
+        </h4>
+      </div>
+    </div>
   </div>
 
   <div class="containerOfCards">
     <div class="card">
-      <img src="../../../assets/img/bandeiras.svg" alt="capacete" />
+      <img src="../../../assets/img/capacete.svg" alt="capacete" />
       <div class="containerCards">
-        <h4>
-          <a [routerLink]="['seasons']"> <b> Seasons </b></a>
+        <h4 class="textSort">
+          <a [routerLink]="['/drivers']"><b> Drivers </b></a>
         </h4>
       </div>
     </div>
 
     <div class="card">
-      <img src="../../../assets/img/f1_logo.svg" alt="capacete" />
+      <img src="../../../assets/img/bandeiras.svg" alt="capacete" />
       <div class="containerCards">
         <h4>
-          <a [routerLink]="['seasons']"><b>Current season </b></a>
+          <a [routerLink]="['seasons']"> <b> Seasons </b></a>
         </h4>
       </div>
     </div>
