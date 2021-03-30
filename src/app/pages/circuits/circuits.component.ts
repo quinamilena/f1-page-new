@@ -9,15 +9,19 @@ import { NavScrollService } from '../../services/nav-scroll.service';
 export class CircuitsComponent implements OnInit {
   constructor(private NavScroll: NavScrollService) {}
 
+  years = this.getYearsCircuits();
+  statusLeft = false;
+  statusRight = true;
+
   navScrollFunction(): void {
     return this.NavScroll.navScroll();
   }
 
   getYearsCircuits(): Array<number> {
-    let endYears: number = 1950;
-    let today: Date = new Date();
-    let getYear: number = today.getFullYear();
-    let allYears: Array<number> = Array();
+    const endYears = 1950;
+    const today: Date = new Date();
+    const getYear: number = today.getFullYear();
+    const allYears: Array<number> = Array();
 
     for (let index = getYear; index >= endYears; index--) {
       allYears.push(index);
@@ -26,7 +30,44 @@ export class CircuitsComponent implements OnInit {
     return allYears;
   }
 
-  years = this.getYearsCircuits();
+  scrollOl(type: string): void {
+    const headTimelineD: any = document.querySelector<HTMLElement>(
+      '#headTimelineD'
+    );
+
+    if (type === 'left') {
+      headTimelineD.scrollBy({
+        left: 900,
+        behavior: 'smooth',
+      });
+    } else {
+      headTimelineD.scrollBy({
+        left: -900,
+        behavior: 'smooth',
+      });
+    }
+
+    setTimeout(() => {
+      if (headTimelineD.scrollLeft === 0) {
+        this.statusRight = true;
+      } else {
+        this.statusRight = false;
+      }
+
+      if (
+        headTimelineD.scrollLeft + headTimelineD.offsetWidth ===
+        headTimelineD.scrollWidth
+      ) {
+        this.statusLeft = true;
+      } else {
+        this.statusLeft = false;
+      }
+    }, 500);
+  }
+
+  getCircuitforYear(year: number): void {
+    console.log(year);
+  }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);

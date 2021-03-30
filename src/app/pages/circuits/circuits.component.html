@@ -26,12 +26,34 @@
 </header>
 
 <section>
-  <div class="headTimeline">
-    <ol>
-      <li class="timeLine" *ngFor="let year of years">
-        <p class="diplome">{{year}}</p>
-        <span class="point"></span>
-      </li>
-    </ol>
+  <div class="bodyTime">
+    <div id="leftArrow" class="prev">
+      <button
+        class="arrowScroll leftButton"
+        [disabled]="statusRight"
+        (click)="scrollOl('right')"
+      >
+        &#xab;
+      </button>
+    </div>
+
+    <div class="headTimeline" id="headTimelineD">
+      <ol class="olTimeLine">
+        <li class="timeLine" *ngFor="let year of years">
+          <p class="diplome" (click)="getCircuitforYear(year)">{{ year }}</p>
+          <span class="point"></span>
+        </li>
+      </ol>
+    </div>
+
+    <div id="rightArrow" class="next">
+      <button
+        class="arrowScroll rightButton"
+        [disabled]="statusLeft"
+        (click)="scrollOl('left')"
+      >
+        &#xbb;
+      </button>
+    </div>
   </div>
 </section>

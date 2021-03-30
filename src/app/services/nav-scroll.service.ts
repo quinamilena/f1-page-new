@@ -7,25 +7,27 @@ export class NavScrollService {
   constructor() {}
 
   navScroll(): void {
-    let headline: any = document.querySelector<HTMLElement>('.headline');
-    let inner: any = document.querySelector<HTMLElement>('.inner');
-    let nav: any = document.querySelectorAll('nav');
-    let navHeight = 75;
+    const headline: any = document.querySelector<HTMLElement>('.headline');
+    const inner: any = document.querySelectorAll<HTMLElement>('inner');
+    const nav: any = document.querySelectorAll('nav');
+    const navHeight = 75;
 
-    window.onscroll = function (e: any) {
-      var scrollTop = document.body.scrollTop;
-      let headlineHeight = headline.offsetHeight - navHeight;
-      let navOffset =
+    window.onscroll = (e: any) => {
+      const scrollTop = document.body.scrollTop;
+      const headlineHeight = headline.offsetHeight - navHeight;
+      const navOffset =
         nav.length > 0
           ? nav[0].getBoundingClientRect().top + window.scrollY
           : 0;
 
-      if (nav.length === 0) return;
+      if (nav.length === 0) {
+        return;
+      }
 
       headline.style.opacity = String(1 - scrollTop / headlineHeight);
 
-      for (let i = 0; i < inner.length; i++) {
-        const element = inner[i];
+      for (const [index] of inner.entries()) {
+        const element = inner[index];
         element.style.transform = 'translateY(' + scrollTop * 0.4 + 'px)';
       }
 
@@ -33,7 +35,9 @@ export class NavScrollService {
         nav[0].classList.add('scrolled');
       } else if (nav.length > 0) {
         nav[0].classList.forEach((item: string) => {
-          if (item === 'scrolled') nav[0].classList.remove('scrolled');
+          if (item === 'scrolled') {
+            nav[0].classList.remove('scrolled');
+          }
         });
       }
     };
