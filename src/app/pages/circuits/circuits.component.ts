@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { from, Observable } from 'rxjs';
 
 import { NavScrollService } from '../../services/nav-scroll.service';
-import { GetDataService } from './get-data.service';
+import { GetDataService } from '../../services/get-data.service';
 import { IFlags } from '../../interfaces/IFlags';
 import { ICircuit } from '../../interfaces/ICircuit';
 import { CCircuit } from '../../class/CCircuit';

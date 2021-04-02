@@ -64,7 +64,7 @@
         <div class="card">
           <div class="card-face card-face-front">
             <img class="headFlags" src="{{ item.img }}" alt="bandeira" />
-            <h1 class="teste">{{ item.circuitName }}</h1>
+            <h1 class="nameCircuit">{{ item.circuitName }}</h1>
           </div>
           <div class="card-face card-face-back">
             <h1>Location</h1>
@@ -78,6 +78,7 @@
                 <strong>Country</strong> <span> - </span>{{ item.country }}
               </li>
             </ul>
+            <a href="{{ item.url }}" target="_blank"> + More Infos</a>
           </div>
         </div>
       </div>

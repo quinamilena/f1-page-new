@@ -159,7 +159,7 @@ div.prev button {
         object-fit: cover;
       }
 
-      .teste {
+      .nameCircuit {
         margin: 0 15% 0 15%;
         text-align: center;
       }
@@ -176,6 +176,7 @@ div.prev button {
 
         h1 {
           text-align: center;
+          margin-bottom: 5px;
         }
 
         ul.infoUl {
@@ -198,6 +199,18 @@ div.prev button {
               border-bottom: 1px solid #ef5350;
             }
           }
+        }
+
+        a {
+          font-size: 14px !important;
+          text-align: center !important;
+          color: red !important;
+          text-decoration: none !important;
+          margin: 0 30% !important;
+        }
+
+        a:hover {
+          text-decoration: underline !important;
         }
       }
     }
