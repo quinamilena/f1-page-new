@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { from, Observable } from 'rxjs';
+
 import { NavScrollService } from '../../services/nav-scroll.service';
+import { GetDataService } from './get-data.service';
+import { IFlags } from '../../interfaces/IFlags';
+import { ICircuit } from '../../interfaces/ICircuit';
+import { CCircuit } from '../../class/CCircuit';
 
 @Component({
   selector: 'app-circuits',
@@ -7,11 +13,17 @@ import { NavScrollService } from '../../services/nav-scroll.service';
   styleUrls: ['./circuits.component.scss'],
 })
 export class CircuitsComponent implements OnInit {
-  constructor(private NavScroll: NavScrollService) {}
+  constructor(
+    private NavScroll: NavScrollService,
+    private serviceCircuits: GetDataService
+  ) {}
 
   years = this.getYearsCircuits();
   statusLeft = false;
   statusRight = true;
+  totayYear!: number;
+  allCircuits!: Array<CCircuit>;
+  flags: any;
 
   navScrollFunction(): void {
     return this.NavScroll.navScroll();
@@ -22,6 +34,8 @@ export class CircuitsComponent implements OnInit {
     const today: Date = new Date();
     const getYear: number = today.getFullYear();
     const allYears: Array<number> = Array();
+
+    this.totayYear = getYear;
 
     for (let index = getYear; index >= endYears; index--) {
       allYears.push(index);
@@ -66,11 +80,59 @@ export class CircuitsComponent implements OnInit {
   }
 
   getCircuitforYear(year: number): void {
-    console.log(year);
+    this.totayYear = year;
+
+    this.serviceCircuits.getAllYear(year).subscribe({
+      next: (data: ICircuit) => {
+        const resallCircuits = data.MRData.CircuitTable.Circuits;
+
+        this.allCircuits = resallCircuits.map((circuit: any) => {
+          const img = this.flags.filter(
+            (fl: any) => fl.name === circuit.Location.country
+          )[0].img
+            ? this.flags.filter(
+                (fl: any) => fl.name === circuit.Location.country
+              )[0].img
+            : this.flags[this.flags.length - 1].img;
+
+          const cirObj = new CCircuit(
+            circuit.Location.country,
+            circuit.Location.lat,
+            circuit.Location.locality,
+            circuit.Location.long,
+            circuit.circuitId,
+            circuit.circuitName,
+            circuit.url,
+            img
+          );
+
+          return cirObj;
+        });
+
+        this.allCircuits.sort((a, b) => {
+          return a.circuitName > b.circuitName
+            ? 1
+            : b.circuitName > a.circuitName
+            ? -1
+            : 0;
+        });
+      },
+    });
+  }
+
+  getImgCircuit(): void {
+    this.serviceCircuits.getFlags().subscribe({
+      next: (value: IFlags): void => {
+        this.flags = value;
+      },
+      error: (error: any) => console.error(error),
+    });
   }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
     this.navScrollFunction();
+    this.getCircuitforYear(this.totayYear);
+    this.getImgCircuit();
   }
 }

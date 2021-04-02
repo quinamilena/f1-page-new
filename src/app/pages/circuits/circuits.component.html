@@ -25,7 +25,7 @@
   </div>
 </header>
 
-<section>
+<section class="bodySection">
   <div class="bodyTime">
     <div id="leftArrow" class="prev">
       <button
@@ -55,5 +55,32 @@
         &#xbb;
       </button>
     </div>
+  </div>
+
+  <div class="bodyInfo">
+    <h1 class="h1Center">All {{ totayYear }} circuits</h1>
+    <section class="allCircuits">
+      <div class="itemFlex" *ngFor="let item of allCircuits">
+        <div class="card">
+          <div class="card-face card-face-front">
+            <img class="headFlags" src="{{ item.img }}" alt="bandeira" />
+            <h1 class="teste">{{ item.circuitName }}</h1>
+          </div>
+          <div class="card-face card-face-back">
+            <h1>Location</h1>
+            <ul class="infoUl">
+              <li><strong>Lat</strong><span> - </span>{{ item.lat }}</li>
+              <li><strong>Long</strong> <span> - </span>{{ item.long }}</li>
+              <li>
+                <strong>Locality</strong> <span> - </span>{{ item.locality }}
+              </li>
+              <li>
+                <strong>Country</strong> <span> - </span>{{ item.country }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </section>

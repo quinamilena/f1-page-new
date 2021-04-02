@@ -2,8 +2,13 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const API_BASE = 'http://ergast.com/api/f1';
+const API_FLAGS = '../assets/libs/flagsCodes.json';
+
 export const environment = {
-  production: false
+  production: false,
+  apiEndPoint: API_BASE,
+  apiEndFlags: API_FLAGS,
 };
 
 /*
