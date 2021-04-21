@@ -2,132 +2,158 @@
   {
     "code": "ad",
     "img": "https://flagcdn.com/ad.svg",
-    "name": "Andorra"
+    "name": "Andorra",
+    "nationality": ["Andorran"]
   },
   {
     "code": "ae",
     "img": "https://flagcdn.com/ae.svg",
-    "name": "UAE"
+    "name": "UAE",
+    "nationality": ["Emirati", " Emirian", "Emiri"]
   },
   {
     "code": "ae",
     "img": "https://flagcdn.com/ae.svg",
-    "name": "United Arab Emirates"
+    "name": "United Arab Emirates",
+    "nationality": ["Emirati", " Emirian", "Emiri"]
   },
   {
     "code": "af",
     "img": "https://flagcdn.com/af.svg",
-    "name": "Afghanistan"
+    "name": "Afghanistan",
+    "nationality": ["Afghan"]
   },
   {
     "code": "ag",
     "img": "https://flagcdn.com/ag.svg",
-    "name": "Antigua and Barbuda"
+    "name": "Antigua and Barbuda",
+    "nationality": ["Antiguan or Barbudan", "Antiguan", "Barbudan"]
   },
   {
     "code": "ai",
     "img": "https://flagcdn.com/ai.svg",
-    "name": "Anguilla"
+    "name": "Anguilla",
+    "nationality": ["Anguillan"]
   },
   {
     "code": "al",
     "img": "https://flagcdn.com/al.svg",
-    "name": "Albania"
+    "name": "Albania",
+    "nationality": ["Albanian"]
   },
   {
     "code": "am",
     "img": "https://flagcdn.com/am.svg",
-    "name": "Armenia"
+    "name": "Armenia",
+    "nationality": ["Armenian"]
   },
   {
     "code": "ao",
     "img": "https://flagcdn.com/ao.svg",
-    "name": "Angola"
+    "name": "Angola",
+    "nationality": ["Angolan"]
   },
   {
     "code": "aq",
     "img": "https://flagcdn.com/aq.svg",
-    "name": "Antarctica"
+    "name": "Antarctica",
+    "nationality": ["Antarctic"]
   },
   {
     "code": "ar",
     "img": "https://flagcdn.com/ar.svg",
-    "name": "Argentina"
+    "name": "Argentina",
+    "nationality": ["Argentine"]
   },
   {
     "code": "as",
     "img": "https://flagcdn.com/as.svg",
-    "name": "American Samoa"
+    "name": "American Samoa",
+    "nationality": ["American Samoan"]
   },
   {
     "code": "at",
     "img": "https://flagcdn.com/at.svg",
-    "name": "Austria"
+    "name": "Austria",
+    "nationality": ["Austrian"]
   },
   {
     "code": "au",
     "img": "https://flagcdn.com/au.svg",
-    "name": "Australia"
+    "name": "Australia",
+    "nationality": ["Australian"]
   },
   {
     "code": "aw",
     "img": "https://flagcdn.com/aw.svg",
-    "name": "Aruba"
+    "name": "Aruba",
+    "nationality": ["Aruban"]
   },
   {
     "code": "ax",
     "img": "https://flagcdn.com/ax.svg",
-    "name": "Åland Islands"
+    "name": "Åland Islands",
+    "nationality": ["Åland Island"]
   },
   {
     "code": "az",
     "img": "https://flagcdn.com/az.svg",
-    "name": "Azerbaijan"
+    "name": "Azerbaijan",
+    "nationality": ["Azerbaijani", "Azeri"]
   },
   {
     "code": "ba",
     "img": "https://flagcdn.com/ba.svg",
-    "name": "Bosnia and Herzegovina"
+    "name": "Bosnia and Herzegovina",
+    "nationality": ["Bosnian or Herzegovinian", "Bosnian", "Herzegovinian"]
   },
   {
     "code": "bb",
     "img": "https://flagcdn.com/bb.svg",
-    "name": "Barbados"
+    "name": "Barbados",
+    "nationality": ["Barbadian"]
   },
   {
     "code": "bd",
     "img": "https://flagcdn.com/bd.svg",
-    "name": "Bangladesh"
+    "name": "Bangladesh",
+    "nationality": ["Bangladeshi"]
   },
   {
     "code": "be",
     "img": "https://flagcdn.com/be.svg",
-    "name": "Belgium"
+    "name": "Belgium",
+    "nationality": ["Belgian"]
   },
   {
     "code": "bf",
     "img": "https://flagcdn.com/bf.svg",
-    "name": "Burkina Faso"
+    "name": "Burkina Faso",
+    "nationality": ["Burkinabé "]
   },
   {
     "code": "bg",
     "img": "https://flagcdn.com/bg.svg",
-    "name": "Bulgaria"
+    "name": "Bulgaria",
+    "nationality": "Bulgarian"
   },
   {
     "code": "bh",
     "img": "https://flagcdn.com/bh.svg",
-    "name": "Bahrain"
+    "name": "Bahrain",
+    "nationality": "Bahraini"
   },
   {
     "code": "bi",
     "img": "https://flagcdn.com/bi.svg",
-    "name": "Burundi"
+    "name": "Burundi",
+    "nationality": "Burundian"
   },
   {
     "code": "bj",
     "img": "https://flagcdn.com/bj.svg",
-    "name": "Benin"
+    "name": "Benin",
+    "nationality": ["Beninese", "Beninois"]
   },
   {
     "code": "bl",
