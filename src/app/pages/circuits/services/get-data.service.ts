@@ -1,22 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
-import { environment } from '../../environments/environment';
-import { IFlags } from '../interfaces/IFlags';
-import { ICircuit } from '../interfaces/ICircuit';
+import { environment } from '../../../../environments/environment';
+import { IFlags } from '../../../interfaces/IFlags';
+import { ICircuit } from '../../../interfaces/ICircuit';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GetDataService {
+  onGetAllYearChanged: BehaviorSubject<any>;
+
   api = `${environment.apiEndPoint}`;
   apiFlages = `${environment.apiEndFlags}`;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.onGetAllYearChanged = new BehaviorSubject([]);
+  }
 
   getAllYear(year: number): Observable<ICircuit> {
+    // return new Promise((resolve, reject) => {
     return this.http.get<ICircuit>(`${this.api}/${year}/circuits.json`);
+    // });
   }
 
   getFlags(): Observable<IFlags> {

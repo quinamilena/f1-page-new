@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavScrollService } from '../../services/nav-scroll.service';
+import { SelectFilterService } from '../../services/select-filter.service';
 
 @Component({
   selector: 'app-drivers',
@@ -7,44 +8,22 @@ import { NavScrollService } from '../../services/nav-scroll.service';
   styleUrls: ['./drivers.component.scss'],
 })
 export class DriversComponent implements OnInit {
-  constructor(private NavScroll: NavScrollService) {}
+  constructor(
+    private NavScroll: NavScrollService,
+    private SelectFilter: SelectFilterService
+  ) {}
 
   navScrollFunction(): void {
     return this.NavScroll.navScroll();
   }
 
-  funcSelect(): void {
-    const allOptions: NodeListOf<Element> = document.querySelectorAll(
-      '.default_option'
-    );
-    const dropdownAll: NodeListOf<Element> = document.querySelectorAll(
-      '.dropdown ul'
-    );
-    const allLi: NodeListOf<Element> = document.querySelectorAll(
-      '.dropdown ul li'
-    );
-
-    allOptions[0].addEventListener('click', (): void => {
-      dropdownAll.forEach((item: any) => {
-        item.classList.toggle('active');
-      });
-    });
-
-    allLi.forEach((item) => {
-      item.addEventListener('click', (): void => {
-        const text: any = item.innerHTML;
-        const defaultClass: any = document.querySelector('.default_option');
-        defaultClass.innerHTML = text;
-        dropdownAll.forEach((dropAll: any) => {
-          dropAll.classList.remove('active');
-        });
-      });
-    });
+  selectFilter(): void {
+    return this.SelectFilter.funcSelect();
   }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
     this.navScrollFunction();
-    this.funcSelect();
+    this.selectFilter();
   }
 }

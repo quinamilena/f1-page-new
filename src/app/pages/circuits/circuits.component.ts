@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { from, Observable } from 'rxjs';
 
 import { NavScrollService } from '../../services/nav-scroll.service';
-import { GetDataService } from '../../services/get-data.service';
+import { GetDataService } from './services/get-data.service';
 import { IFlags } from '../../interfaces/IFlags';
 import { ICircuit } from '../../interfaces/ICircuit';
 import { CCircuit } from '../../class/CCircuit';
@@ -21,7 +21,7 @@ export class CircuitsComponent implements OnInit {
   years = this.getYearsCircuits();
   statusLeft = false;
   statusRight = true;
-  totayYear!: number;
+  todayYear!: number;
   allCircuits!: Array<CCircuit>;
   flags: any;
 
@@ -35,7 +35,7 @@ export class CircuitsComponent implements OnInit {
     const getYear: number = today.getFullYear();
     const allYears: Array<number> = Array();
 
-    this.totayYear = getYear;
+    this.todayYear = getYear;
 
     for (let index = getYear; index >= endYears; index--) {
       allYears.push(index);
@@ -80,13 +80,13 @@ export class CircuitsComponent implements OnInit {
   }
 
   getCircuitforYear(year: number): void {
-    this.totayYear = year;
+    this.todayYear = year;
 
     this.serviceCircuits.getAllYear(year).subscribe({
       next: (data: ICircuit) => {
-        const resallCircuits = data.MRData.CircuitTable.Circuits;
+        const resAllCircuits = data.MRData.CircuitTable.Circuits;
 
-        this.allCircuits = resallCircuits.map((circuit: any) => {
+        this.allCircuits = resAllCircuits.map((circuit: any) => {
           const img = this.flags.filter(
             (fl: any) => fl.name === circuit.Location.country
           )[0].img
@@ -132,7 +132,7 @@ export class CircuitsComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo(0, 0);
     this.navScrollFunction();
-    this.getCircuitforYear(this.totayYear);
+    this.getCircuitforYear(this.todayYear);
     this.getImgCircuit();
   }
 }
