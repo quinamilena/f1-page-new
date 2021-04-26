@@ -20,9 +20,9 @@ export class GetDataService {
   }
 
   getAllYear(year: number): Observable<ICircuit> {
-    // return new Promise((resolve, reject) => {
-    return this.http.get<ICircuit>(`${this.api}/${year}/circuits.json`);
-    // });
+    return new Promise((resolve, reject) => {
+      this.http.get<ICircuit>(`${this.api}/${year}/circuits.json`);
+    });
   }
 
   getFlags(): Observable<IFlags> {
