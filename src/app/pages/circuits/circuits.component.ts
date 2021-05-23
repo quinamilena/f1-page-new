@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { NavScrollService } from '../../services/nav-scroll.service';
 import { GetDataService } from './services/get-data.service';
-import { CCircuit } from '../../class/CCircuit';
+import { CCircuit } from '../../class/circuit.class';
 
 @Component({
   selector: 'app-circuits',

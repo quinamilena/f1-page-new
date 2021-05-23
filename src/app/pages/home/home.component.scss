@@ -1,3 +1,6 @@
+$redColor: #ef5350;
+$whiteColor: #f5f5f5;
+
 * {
   box-sizing: border-box;
 }
@@ -56,12 +59,17 @@
   }
 
   a:hover {
-    color: #ef5350;
+    color: $redColor;
   }
-}
 
-.card:hover {
-  box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+  img {
+    width: 20%;
+    padding: 0 2%;
+  }
+
+  &:hover {
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
+  }
 }
 
 .containerCards {
@@ -70,7 +78,108 @@
   text-align: left;
 }
 
-.card img {
-  width: 20%;
-  padding: 0 2%;
+.cardTwo {
+  position: relative;
+  width: 50%;
+  height: 300px;
+  cursor: pointer;
+
+  .divSize {
+    width: 50%;
+  }
+
+  img {
+    width: 57%;
+    display: block;
+    margin: 15% auto;
+    filter: invert(61%) sepia(93%) saturate(4498%) hue-rotate(333deg)
+      brightness(102%) contrast(88%);
+  }
+}
+
+.boxDescri {
+  width: 50%;
+  margin: 0 0 0 3%;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
+
+  p {
+    text-align: justify;
+  }
+}
+
+// Icons Social Media //
+
+$timing: 265ms;
+$iconColor: #ef5350;
+$accent: #ff7387;
+$bluefade: #ff97bd;
+$gradient: #ef5350;
+
+@mixin transformScale($size: 1) {
+  transform: scale($size);
+  -ms-transform: scale($size);
+  -webkit-transform: scale($size);
+}
+
+body {
+  background-color: rgba($iconColor, 0.05);
+}
+
+.social-container {
+  text-align: center;
+}
+
+.social-icons {
+  padding: 0;
+  list-style: none;
+  margin: 1em;
+
+  li {
+    display: inline-block;
+    margin: 0.2em;
+    position: relative;
+    font-size: 1.4em;
+  }
+
+  fa-icon {
+    color: $whiteColor;
+    position: absolute;
+    top: 17px;
+    left: 18px;
+    transition: all $timing ease-out;
+  }
+
+  a {
+    display: inline-block;
+
+    &:before {
+      @include transformScale();
+      content: " ";
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      display: block;
+      background: linear-gradient(45deg, $iconColor, $accent);
+      transition: all $timing ease-out;
+    }
+
+    &:hover:before {
+      transform: scale(0);
+      transition: all $timing ease-in;
+    }
+
+    &:hover fa-icon {
+      @include transformScale(2.2);
+      color: $iconColor;
+      background: -webkit-linear-gradient(45deg, $iconColor, $accent);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: all $timing ease-in;
+    }
+  }
 }

@@ -8,7 +8,7 @@
 </header>
 
 <section class="bodySection">
-  <h1 class="textCenter">More Infos</h1>
+  <h1 class="textCenter">About F1</h1>
 
   <div class="containerOfCards">
     <div class="card">
@@ -21,7 +21,7 @@
     </div>
 
     <div class="card">
-      <img src="../../../assets/img/f1_logo.svg" alt="capacete" />
+      <img src="../../../assets/img/f1_logo.svg" alt="f1 logo" />
       <div class="containerCards">
         <h4 class="textLong">
           <a [routerLink]="['seasons']"><b>Current season </b></a>
@@ -47,6 +47,53 @@
           <a [routerLink]="['seasons']"> <b> Seasons </b></a>
         </h4>
       </div>
+    </div>
+  </div>
+
+  <h1 class="textCenter">More Infos</h1>
+
+  <div class="containerOfCards divSize">
+    <div class="cardTwo">
+      <img
+        class="imgNone"
+        src="../../../assets/img/f1_logo.svg"
+        alt="capacete"
+      />
+      <div class="social-container">
+        <ul class="social-icons">
+          <li>
+            <a href="https://www.facebook.com/Formula1/" target="_blank">
+              <fa-icon [icon]="faFacebook"></fa-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.formula1.com/" target="_blank">
+              <fa-icon [icon]="faGlobe"></fa-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/f1/" target="_blank">
+              <fa-icon [icon]="faInstagram"></fa-icon>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/f1" target="_blank">
+              <fa-icon [icon]="faTwitter"></fa-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="boxDescri">
+      <h1 class="textCenter">Description</h1>
+      <p>
+        The FIA Formula One World Championship is a motor racing championship
+        for Formula One cars. It is as the highest class of competition for
+        open-wheel racing cars. Drivers and teams are scheduled to compete for
+        the titles of World Drivers' Champion and World Constructors' Champion
+        respectively.
+      </p>
     </div>
   </div>
 </section>

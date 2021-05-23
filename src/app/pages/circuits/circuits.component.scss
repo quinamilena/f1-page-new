@@ -1,8 +1,13 @@
+$whiteColor: #f5f5f5;
+$yellowColor: #f9f871;
+$redColor: #ef5350;
+$greenColor: #00c853;
+
 div.bodyTime {
   display: flex;
 
   height: 100px;
-  background-color: #f5f5f5;
+  background-color: $whiteColor;
   width: 100%;
   margin: 0 auto 25px auto;
   padding: 20px;
@@ -41,10 +46,10 @@ ol.olTimeLine {
       position: absolute;
       top: -18px;
       left: 37%;
-      color: #f9f871;
+      color: $yellowColor;
 
       &:hover {
-        color: #f5f5f5;
+        color: $whiteColor;
         cursor: pointer !important;
       }
     }
@@ -85,14 +90,14 @@ div.prev button {
   padding-right: 25px;
   font-size: 70px;
   margin: -26px 0 0 -8px !important;
-  color: #ef5350;
+  color: $redColor;
 }
 
 .rightButton:hover {
   padding-right: 25px;
   font-size: 70px;
   margin: -28px 0 0 -43px !important;
-  color: #00c853;
+  color: $greenColor;
   cursor: pointer !important;
 }
 
@@ -141,7 +146,7 @@ div.prev button {
       transition: all 0.8s ease;
       background: transparent;
       background-color: rgb(33, 33, 33, 0.85);
-      color: #ef5350;
+      color: $redColor;
       border-radius: 8px;
 
       .headFlags {
@@ -186,18 +191,18 @@ div.prev button {
 
           li {
             span {
-              color: #ef5350;
+              color: $redColor;
               font-size: 20px;
             }
 
             text-align: center;
             padding: 3%;
             font-size: 16px;
-            color: #f5f5f5 !important;
+            color: $whiteColor !important;
             font-family: "Aldrich", sans-serif !important;
 
             &:not(:last-child) {
-              border-bottom: 1px solid #ef5350;
+              border-bottom: 1px solid $redColor;
             }
           }
         }

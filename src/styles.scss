@@ -26,38 +26,43 @@ input {
 #EF5350   #9E9E9E
 */
 
+$whiteColor: #f5f5f5;
+$colorWhite: #fbe9e7;
+$redColor: #ef5350;
+$blackColor: #212121;
+
 body {
   margin: 0;
   padding: 0;
-  color: #212121;
+  color: $blackColor;
   background-color: rgb(33, 33, 33, 0.5);
 }
 
 // Nav - Páginas
 header {
-  background: #f5f5f5;
+  background: $whiteColor;
 }
 
 .headline {
   position: relative;
   height: 500px;
-  color: #f5f5f5;
+  color: $whiteColor;
   text-align: center;
   background-image: url("./assets/img/flag_f1.jpg");
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center center;
   opacity: 1;
-}
 
-.headline:after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(17, 17, 17, 0.8);
+  &:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 17, 17, 0.8);
+  }
 }
 
 .inner {
@@ -68,35 +73,35 @@ header {
   z-index: 10;
   transform: translateX(-50%) translateY(-50%);
   animation: fade-in 0.75s 0.25s ease-in forwards;
-}
 
-.inner h1 {
-  margin: 0;
-  font-size: 5em;
-  line-height: 1.2em;
-}
+  h1 {
+    margin: 0;
+    font-size: 5em;
+    line-height: 1.2em;
+  }
 
-.inner p {
-  margin: 0;
-  font-size: 1.4em;
-  font-style: italic;
+  p {
+    margin: 0;
+    font-size: 1.4em;
+    font-style: italic;
+  }
 }
 
 nav {
   position: fixed;
   width: 100%;
   z-index: 10;
+
+  ul {
+    float: right;
+    list-style: none;
+    padding: 25px;
+    margin: 0;
+  }
 }
 
 nav.scrolled {
   background: rgba(17, 17, 17, 0.9);
-}
-
-nav ul {
-  float: right;
-  list-style: none;
-  padding: 25px;
-  margin: 0;
 }
 
 .nav_list li {
@@ -104,51 +109,51 @@ nav ul {
   animation: 2s slideUp ease forwards 0.5s;
   position: relative;
   float: left;
-}
 
-.nav_list li a {
-  font-size: 18px;
-  color: #f5f5f5;
-  text-decoration: none;
-  margin-right: 20px;
-  display: block;
-  transition: all 0.5s ease-in-out;
-}
+  a {
+    font-size: 18px;
+    color: $whiteColor;
+    text-decoration: none;
+    margin-right: 20px;
+    display: block;
+    transition: all 0.5s ease-in-out;
 
-.nav_list li a.active {
-  color: #ef5350;
-}
+    &:hover {
+      color: $colorWhite;
+    }
+  }
 
-.nav_list li a.active:hover {
-  color: #212121;
-}
+  a.active {
+    color: $redColor;
 
-.nav_list li a:hover {
-  color: #fbe9e7;
-}
+    &:hover {
+      color: $blackColor;
+    }
+  }
 
-.nav_list li::before {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 0px;
-  left: 0;
-  bottom: 0px;
-  background: #ef5350;
-  transition: all 0.5s ease;
-  overflow: hidden;
-}
+  &::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0px;
+    left: 0;
+    bottom: 0px;
+    background: $redColor;
+    transition: all 0.5s ease;
+    overflow: hidden;
+  }
 
-.nav_list li.li_active::before {
-  content: none;
-}
+  &.li_active::before {
+    content: none;
+  }
 
-.nav_list li.textSort:hover:before {
-  width: 75%;
-}
+  &.textSort:hover:before {
+    width: 75%;
+  }
 
-.nav_list li:hover:before {
-  width: 82%;
+  &:hover:before {
+    width: 82%;
+  }
 }
 
 .logo {
@@ -162,9 +167,9 @@ nav ul {
 
 // Body
 section.bodySection {
-  background-color: #f5f5f5;
+  background-color: $whiteColor;
   width: 100%;
-  margin: 0 auto 25px auto;
+  margin: -10px auto 25px auto;
   padding: 20px;
   max-width: 65em;
   font-size: 1.2em;
@@ -180,7 +185,7 @@ section.bodySection {
 }
 
 .textCenter:hover {
-  color: #ef5350;
+  color: $redColor;
 }
 
 // Fim ---- Body
