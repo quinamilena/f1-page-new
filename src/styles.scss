@@ -70,7 +70,7 @@ header {
   top: 50%;
   left: 50%;
   opacity: 0;
-  z-index: 10;
+  z-index: 1;
   transform: translateX(-50%) translateY(-50%);
   animation: fade-in 0.75s 0.25s ease-in forwards;
 
@@ -87,83 +87,7 @@ header {
   }
 }
 
-nav {
-  position: fixed;
-  width: 100%;
-  z-index: 10;
-
-  ul {
-    float: right;
-    list-style: none;
-    padding: 25px;
-    margin: 0;
-  }
-}
-
-nav.scrolled {
-  background: rgba(17, 17, 17, 0.9);
-}
-
-.nav_list li {
-  text-transform: uppercase;
-  animation: 2s slideUp ease forwards 0.5s;
-  position: relative;
-  float: left;
-
-  a {
-    font-size: 18px;
-    color: $whiteColor;
-    text-decoration: none;
-    margin-right: 20px;
-    display: block;
-    transition: all 0.5s ease-in-out;
-
-    &:hover {
-      color: $colorWhite;
-    }
-  }
-
-  a.active {
-    color: $redColor;
-
-    &:hover {
-      color: $blackColor;
-    }
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    height: 2px;
-    width: 0px;
-    left: 0;
-    bottom: 0px;
-    background: $redColor;
-    transition: all 0.5s ease;
-    overflow: hidden;
-  }
-
-  &.li_active::before {
-    content: none;
-  }
-
-  &.textSort:hover:before {
-    width: 75%;
-  }
-
-  &:hover:before {
-    width: 82%;
-  }
-}
-
-.logo {
-  height: 75px;
-  float: left;
-  background-image: url("./assets/img/local.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-// Fim ---- Nan Páginas
+// Fim ---- Na Páginas
 
 // Body
 section.bodySection {
@@ -197,4 +121,129 @@ section.bodySection {
   100% {
     opacity: 1;
   }
+}
+
+// Medias
+@media (min-width: 160px) and (max-width: 320px) {
+  .inner {
+    font-size: 11px;
+  }
+
+  .containerOfCards {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .containerCards {
+    font-size: 8px !important;
+  }
+
+  .container-info-mobile {
+    display: inline !important;
+  }
+
+  .cardTwo {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .boxDescri {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 481px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  .inner {
+    font-size: 12px;
+  }
+
+  .card {
+    aspect-ratio: 6/4 !important;
+  }
+
+  .containerCards {
+    font-size: 24px !important;
+  }
+
+  .container-info-mobile {
+    display: inline !important;
+  }
+
+  .cardTwo {
+    width: 100% !important;
+  }
+
+  .boxDescri {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 641px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  .container-info-mobile {
+    display: inline !important;
+  }
+
+  .cardTwo {
+    width: 100% !important;
+  }
+
+  .boxDescri {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+@media (min-width: 641px) and (max-width: 961px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .container-info-mobile {
+    display: inline !important;
+  }
+
+  .cardTwo {
+    width: 80% !important;
+    height: 350px !important;
+    margin: 0 auto;
+  }
+
+  .boxDescri {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+@media (min-width: 961px) and (max-width: 1025px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .container-info-mobile {
+    display: inline !important;
+  }
+
+  .cardTwo {
+    width: 38% !important;
+    margin: 0 auto;
+  }
+
+  .boxDescri {
+    width: 90% !important;
+    margin: 0 auto !important;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1281px) {
+  /* big landscape tablets, laptops, and desktops */
+  .container-info-mobile {
+    display: inline !important;
+  }
+
+  .cardTwo {
+    width: 38% !important;
+    margin: 0 auto;
+  }
+
+  .boxDescri {
+    width: 90% !important;
+    margin: 0 auto !important;
+  }
+}
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
 }

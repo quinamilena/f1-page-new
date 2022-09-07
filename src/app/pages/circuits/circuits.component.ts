@@ -21,6 +21,7 @@ export class CircuitsComponent implements OnInit {
   todayYear!: number;
   allCircuits!: Array<CCircuit>;
   flags: any;
+  page = 'Circuits';
 
   navScrollFunction(): void {
     return this.NavScroll.navScroll();
@@ -42,9 +43,8 @@ export class CircuitsComponent implements OnInit {
   }
 
   scrollOl(type: string): void {
-    const headTimelineD: any = document.querySelector<HTMLElement>(
-      '#headTimelineD'
-    );
+    const headTimelineD: any =
+      document.querySelector<HTMLElement>('#headTimelineD');
 
     if (type === 'left') {
       headTimelineD.scrollBy({
@@ -81,10 +81,10 @@ export class CircuitsComponent implements OnInit {
 
     this.serviceCircuits
       .getAllYear(year)
-      .then((response) => {
+      .then((response: any) => {
         this.allCircuits = response;
       })
-      .catch((error) => {
+      .catch((error: any) => {
         console.error(error);
       });
   }

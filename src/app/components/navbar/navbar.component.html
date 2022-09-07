@@ -1,0 +1,19 @@
+<nav class="site-navbar">
+  <div class="logo"></div>
+  <ul class="nav_list">
+    <li
+      class="nav_list_item"
+      *ngFor="let item of itens"
+      [ngClass]="{ li_active: item.active }"
+    >
+      <a [ngClass]="{ active: item.active }" [routerLink]="[item.link]">{{
+        item.name
+      }}</a>
+    </li>
+  </ul>
+
+  <!-- nav-toggler for mobile version only -->
+  <button class="nav-toggler" (click)="togglerClick()">
+    <span></span>
+  </button>
+</nav>
